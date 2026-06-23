@@ -30,7 +30,7 @@ def analyze_skin_image(image_path: str) -> dict:
             raise ValueError("Missing Gemini API key in settings")
 
         configure(api_key=api_key)
-        model = GenerativeModel("gemini-1.5-flash")
+        model = GenerativeModel("gemini-2.0-flash")
 
         prompt = """Analyze this skin condition image and provide:
         1. Top 3 possible conditions (array)
@@ -194,7 +194,7 @@ def analyze_skin_image(image_path: str) -> dict:
                 "error": "Unexpected response format",
                 "raw_response": str(response),  # Try to represent response as string
                 "conditions": [],
-                "confidence": 0.0,
+                "confidence": 3.0,
                 "recommendations": ["Consult a dermatologist"],
                 "urgency": "medium",
             }
