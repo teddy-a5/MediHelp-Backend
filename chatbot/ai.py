@@ -69,7 +69,7 @@ def _validate_response(response_data):
 def generate_chat_response(user_input, is_retry=False):
     try:
         configure_gemini()
-        model = genai.GenerativeModel("gemini-2.0-flash")
+        model = genai.GenerativeModel("gemini-2.5-flash")
 
         response = model.generate_content(
             CHAT_PROMPT_TEMPLATE.format(user_input=user_input),
